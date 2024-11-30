@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Website</title>
+    <link rel="stylesheet" href="hotel.css">
+    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b8a58bc95c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
+</head>
+<body>
+    <header class="header" id="navigation-menu">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="https://www.goindigo.in/content/dam/indigov2/6e-website/downloadapp/Feature-Image.png" alt="logo image">
+                </a>
+               
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="location-ask">
+        <span class="where-to">Where to?</span> <span class="required">(Required) </span> <br />
+    <div class="booking">
+
+            <label class="location-label"></label>
+            <input type="text" class="location" placeholder="City, state, location, or airport" required>
+
+            <button type="submit" class="btn date" onclick="dateOpenPopup()">Date</button>
+            <div class="date-popup" id="date-popup">
+                <h2>Select Date</h2>
+                <input type="text" id="datepicker">
+                <button type="button" onclick="dateClosePopup()">OK</button>
+            </div>
+
+            <button type="submit" class="btn room" onclick="roomOpenPopup()">Rooms & Guests</button>
+            <div class="room-popup" id="room-popup">
+                <h2>Rooms and Guests</h2>
+                <div class="container-room">
+                <form>
+                    <label for="rooms">Rooms:</label>
+                    <input type="number" id="rooms" value=1><br><br>
+                    <label for="adults">Adults:</label>
+                    <input type="number" id="adults" value=1><br><br>
+                    <label for="kids">Kids:</label>
+                    <input type="number" id="kids" value=0><br><br>
+                </form>
+                <button type="button" onclick="roomClosePopup()">OK</button>
+
+            </div>
+            </div>
+            <button type="submit" class="btn special-rates" onclick="ratesOpenPopup()">Special Rates</button>
+            <div class="rates-popup" id="rates-popup">
+                <h2>Special Rates</h2>
+                <form class="special-rates-checkbox">
+                    <label class="special-rates-checkbox">Use Points
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">Travel Agents
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">AAA Rate
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">AARP Rate
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">Senior Rate
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">Government / Military Rates
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                </form>
+                    <form class="special-rates-text">
+
+                        <label for="promotion-code">Promotion Code</label><br>
+                        <input type="text" id="promotion-code"><br><br>
+                        <label for="group-code">Group Code</label><br>
+                        <input type="text" id="group-code"><br><br>
+                        <label for="corporate-account">Corporate Account</label><br>
+                        <input type="text" id="corporate-account"><br><br>
+
+                    </form>
+
+
+                <button type="button" onclick="ratesClosePopup()">OK</button>
+            </div>
+
+            <button type="submit" class="btn find-hotels">Find a Hotel</button>
+
+    </div>
+
+    <div class="hotel-front-container">
+        <img src="https://www.hksinc.com/wp-content/uploads/2022/11/Hotelindigo_garden_body1.png" alt="picture of the front of the hotel" class="hotel-front">
+       </div>
+
+       <div class="welcome-text">
+        <h2>HOTEL INDIGO</h2>
+        <p>Nestled amidst the lush tropical beauty of INDIGO, this hotel offers a perfect blend of luxury, comfort, and the enchanting allure of the country's vibrant culture.</p>
+        <button class="btn">Explore More</button>
+       </div>
+
+       <div class="subheading">
+        <h2>Exhilarating Destinations</h2>
+        <p>Here is a journey through some of the most wonderful places on Earth.</p>
+       </div>
+
+       <div class="destinations-images">
+
+        <div class="country" id="italy-div">
+            <img src="https://webimages.oneindia.com/wp-content/uploads/sites/15/2024/01/arif-khan-qI97C620KMg-unsplash.jpg" alt="italy hotel" >
+            <div class="country-text" id="italy-text">BANGLORE</div>
+        </div>
+        <div class="country" id="portugal-div">
+            <img src="https://cdn.britannica.com/62/156662-050-5D93F2F9/India-War-Memorial-arch-New-Delhi.jpg" alt="portugal hotel" >
+            <div class="country-text" id="portugal-text">DEHLI</div>
+        </div>
+        <div class="country" id="japan-div">
+            <img src="https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVtYmFpfGVufDB8fDB8fHww" alt="japan hotel" >
+            <div class="country-text" id="japan-text">MUMBAI</div>
+        </div>
+        <div class="country" id="egypt-div">
+            <img src="https://images.pexels.com/photos/720726/pexels-photo-720726.jpeg?cs=srgb&dl=pexels-abhilash-m-720726.jpg&fm=jpg" alt="egypt hotel" >
+            <div class="country-text" id="egypt-text">HYDERABAD</div>
+        </div>
+       </div>
+
+       <div class="subheading">
+        <h2>Experience Something New</h2>
+        <p>The unknown beckons us, and our imaginations run wild with possibilities</p>
+       </div>
+
+       <div class="experience-images">
+        <div class="experience" id="discount-div">
+            <img src="https://www.hksinc.com/wp-content/uploads/2022/11/Hotelindigo_garden_body1.png" alt="discount picture" >
+            <div class="experience-text" id="discount-text">ADVANCE PURCHASE DISCOUNT</div>
+        </div>
+        <div class="experience" id="points-div">
+            <img src="https://i.pinimg.com/originals/ef/39/c9/ef39c925f59c5fdb013a339e75ea2edb.jpg" alt="points picture" >
+            <div class="experience-text" id="points-text">HOTEL ROOMS</div>
+        </div>
+        <div class="experience" id="parking-div">
+            <img src="https://assets.newatlas.com/dims4/default/7b0aeef/2147483647/strip/true/crop/1610x1080+0+0/resize/1610x1080!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Fautonomous-car-parking-2.jpg" alt="parking picture" >
+            <div class="experience-text" id="parking-text">PARKING</div>
+        </div>
+        <div class="experience" id="plan-div">
+            <img src="https://www.tastingtable.com/img/gallery/20-delicious-indian-dishes-you-have-to-try-at-least-once/intro-1645057933.jpg" alt="plan picture" >
+            <div class="experience-text" id="plan-text">FOOD</div>
+        </div>
+        <div class="experience" id="first-time-div">
+            <img src="https://raw.githubusercontent.com/MichaelZhou334/Hotel-Landing-Page/main/images/first-time.jpg" alt="first-time picture" >
+            <div class="experience-text" id="first-time-text">FIRST TIME DISCOUNTS</div>
+        </div>
+        <div class="experience" id="members-div">
+            <img src="https://content3.jdmagicbox.com/comp/arrah/u1/9999p6182.6182.150721184936.f4u1/catalogue/hotel-aditya-inn-arrah-ho-arrah-hotels-tmyjzy3vag.jpg" alt="members picture" >
+            <div class="experience-text" id="members-text">RECEPTION</div>
+        </div>
+       </div>
+
+       <div class="different-hotels">
+        <img src="https://talatiandpartners.com/wp-content/uploads/2022/08/DayView1980x870C-NEW.jpg" alt="hotel front">
+        <div class="different-hotels-div">
+        <h2>Homes & Villas</h2>
+        <p>Homes & Villas was designed to provide travelers with access to high-end vacation rentals, such as entire homes, villas, and luxury accommodations. The platform featured a curated selection of upscale and unique properties, with distinctive architectural features, stunning views, or premium amenities. We offered additional concierge services, which could include personalized check-in experiences, access to local recommendations, and assistance with planning activities and dining reservations.</p>
+        <button type="submit" class="btn">Join for Free</button>
+    </div>
+    </div>
+
+    <div class="back-to-top">
+    <button onclick="topFunction()" class="btn"> ⬆ Back to Top</button>
+    </div>
+
+  <hr class="footer-line">
+
+    <div class="footer">
+        <div class="col-1">
+            <div>
+            <h3>How can we help?</h3>
+            <button class="btn">Request a Call</button>
+            <div class="social-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+
+            </div>
+
+        </div>
+        </div>
+        <div class="col-2">
+            <a href="#">Travel Inspiration</a>
+            <a href="#">Pet-Friendly Stays</a>
+            <a href="#">Gift Card</a>
+            <a href="#">Global Privacy Statement</a>
+            <a href="#">Site Map</a>
+            <a href="#">Development</a>
+            <a href="#">Media</a>
+            <a href="#">Blog</a>
+            <a href="#">Web Accessibility</a>
+            <a href="#">Customer Support</a>
+        </div>
+        <div class="col-3">
+            <a href="#">Cookies Statement</a>
+            <a href="#">Hotel Hotline</a>
+            <a href="#">Corporate Responsibility</a>
+            <a href="#">Hotel Honors Discount Terms & Conditions</a>
+            <a href="#">Modern Slavery and Human Trafficking</a>
+            <a href="#">Do Not Sell My Personal Information</a>
+            <a href="#">Personal Data Requests</a>
+            <a href="#">Site Usage Agreement</a>
+        </div>
+    </div>
+    <script src="hotel.js"></script>
+    </body>
+    </html>
